@@ -3,10 +3,10 @@ import React from 'react';
 
 const Greeting = ({ currentUser, logout, loginDemoUser }) => {
     const sessionLinks = () => (
-        <nav className="login-signup">
+        <nav className="home_session_links">
             <Link to="/login">Login</Link>
             <br></br>
-            <Link to="/signup">Sign up!</Link>
+            <Link id="signup_button" to="/signup">Sign up!</Link>
             <button onClick={ loginDemoUser }>Demo</button>
         </nav>
     );
