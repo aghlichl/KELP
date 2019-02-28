@@ -3,12 +3,12 @@ import GreetingContainer from '../greeting/greeting_container'
 const Splash = () => {
     return (
         <div className='background-splash'>
-            <div className="home-banner">
+            <div className="home">
                 <GreetingContainer />
+                <div className="logo-pic">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img>
+                </div>
             </div> 
-            <div className="logo-pic">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img>
-            </div>
         </div>
 
 
