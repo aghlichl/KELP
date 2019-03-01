@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -36,34 +38,45 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to Kelp!
-          <br />
-                    Please {this.props.formType} or {this.props.navLink}
-                    {this.renderErrors()}
+            <>
+                <div className="login-nav"> <Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img></Link> </div>
+                <div className="login-main-content">
                     <div className="login-form">
-                        <br />
-                        <label>Email:
-              <input type="text"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                                className="login-input"
-                            />
-                        </label>
-                        <br />
-                        <label>Password:
-              <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        </label>
-                        <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        <form onSubmit={this.handleSubmit} className="login-form-box">
+                            <div className="login-form-login-text">
+                                <h2 className="login-text">Log In to Kelp</h2>
+                                <br />
+                                <strong>New to Kelp?</strong> 
+                                <div id="signup_button">
+                                    <Link to="/signup">Sign Up</Link>
+                                </div>
+                                
+                        {this.renderErrors()}
+                                <br />
+                                <input id="login-form"
+                                    type="text"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                    placeholder="Email"
+                                />
+                                <br />
+
+                                <input id="login-form"
+                                    type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    placeholder="Password"
+                                />
+                                <br />
+                                <input className="login-button" type="submit" value="Log In" />
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
+                    <div className="login-aside">
+                        <img src="https://s3-media4.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"></img>
+                    </div>
+                </div>
+            </>
         );
     }
 }

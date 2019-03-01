@@ -4,10 +4,12 @@ import Splash from './Splash/splash'
 
 const Home = () => (
     <>
-    <Splash />
-    <GreetingContainer />
-    <div className="home">
-        <div className="home_banner">
+    <div className="everything">
+        <Splash />
+        <GreetingContainer />
+        <div className="home">
+            <div className="home_banner">
+            </div>
         </div>
     </div>
     </>

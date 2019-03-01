@@ -1,27 +1,20 @@
 import React from 'react'
+import Search from '../search/search'
 import GreetingContainer from '../greeting/greeting_container'
 const Splash = () => {
     return (
-        <div className='background-splash'>
-            <div className="home">
+        
+          <div id="background">
+            <div className="splash-content-container">
                 <GreetingContainer />
-                <div className="logo-pic">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img>
-                </div>
-            </div> 
-        </div>
-
-
-        // <div className="home_image">
-        //     <div className="home">
-        //         <GreetingContainer />
-        //         <div className="home_banner">
-        //             <h1>
-        //                 Zelp
-        // </h1>
-        //         </div>
-        //     </div>
-        // </div>
+                <div className="splash-logo-search">
+                    <div className="logo-pic">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img>
+                    </div>         
+                    <Search />
+                  </div>
+              </div>
+            </div>
     )
 }
 

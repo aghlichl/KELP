@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
+    
     let store;
     if (window.currentUser) {
         const preloadedState = {
@@ -19,7 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-
+    
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
+    // let images = ["url('/Users/ag/Desktop/KELP/skeleton/kelp/app/assets/images/yelp_splash_1.jpg')", "url('/Users/ag/Desktop/KELP/skeleton/kelp/app/assets/images/yelp_splash_2.jpg')", "url('/Users/ag/Desktop/KELP/skeleton/kelp/app/assets/images/yelp_splash_3.jpg')"];
+    // let random = Math.floor(Math.random() * 3) + 0;
+    // document.getElementById("background").style.backgroundImage = images[random]
 });
