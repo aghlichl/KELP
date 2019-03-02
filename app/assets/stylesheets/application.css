@@ -14,7 +14,70 @@
  *= require_self
  */
 
- 
+ .error-container{
+    width: 100%;
+    min-height: 300px;
+    padding: 40px 245px;
+    background-color: rgb(25,35,30);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+ }
+
+ .login-error{
+    list-style-type: none;
+    width: 60%;
+    background: #fcd6d3;
+    box-sizing: border-box;
+    position: absolute;
+    top: 60px;
+    left: 20%;
+    margin-bottom: 12px;
+    padding: 18px 18px 18px 24px;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 1.5em;
+ }
+
+ .error-container img{
+     margin-bottom: -97px;
+     transform: scale(0.75)
+ }
+
+ .error-container h4{
+    margin-bottom: 30px;
+    font-size: 30px;
+    line-height: 1.5;
+    font-weight: normal;
+    color: rgba(215,219,216,0.8);
+ }
+
+  .error-container h3{
+    margin-bottom: 30px;
+    font-size: inherit;
+    line-height: 1.5;
+    font-weight: normal;
+    color: rgba(215,219,216,0.8);
+  }
+
+ .error-container strong{
+     color: white;
+ }
+
+ .error-gif{
+
+ }
+
+ .error-text{
+
+ }
+
+
+ .error-footer{
+    background: rgb(51, 60,56);
+    min-height: 400px;
+ }
+
 
  .everything{
      display: flex;
@@ -22,7 +85,7 @@
  }
 
  #background{
-     background-image: url('yelp_splash_2.jpg');
+    background-image: url('yelp_splash_2.jpg');
     height: 475px;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -42,6 +105,7 @@
 }
 
 .search-bar{
+    max-height: 35px;
     border-radius: 4px;
     display: flex;
     flex-direction: row;
@@ -62,7 +126,7 @@
     background: #d32323;
     box-shadow: none;
     padding: 0 15px;
-    height: 53px;
+    height: 35px;
     align-items: center;
 }
 
@@ -259,16 +323,6 @@ body {
     background-color: #ccc;
 } */
 
-#near-input{
-    border: transparent;
-    width: 434px;
-    height: 20px;
-    padding: 18px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border-radius: 0;
-    box-sizing: border-box;
-}
 
 #login-form {
     width: 300px;
@@ -326,9 +380,10 @@ select {
 }
 
 #find-input{
+    font-size: 13px;
     width: 480px;
     height: 20px;
-    padding: 18px 20px;
+    padding: 8px 20px;
     margin: 8px 0;
     display: inline-block;
     border-radius: 4px 0 0 4px;
@@ -337,7 +392,19 @@ select {
     border-bottom:transparent; 
     border-left:transparent; 
     border-right: 1px solid lightgray;
+    
+}
 
+#near-input{
+    font-size: 13px;
+    border: transparent;
+    width: 434px;
+    height: 20px;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 0;
+    box-sizing: border-box;
 }
 
 #search-button{

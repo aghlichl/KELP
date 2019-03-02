@@ -27,12 +27,16 @@ class SignupForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li key={`error-${i}`} className="login-error">
                         {error}
                     </li>
                 ))}
             </ul>
         );
+    }
+
+    componentWillUnmount() {
+        this.props.receiveClearErrors();
     }
 
     render() {
