@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Business.delete_all
+
+
+noodleTime = Business.create!(
+  name: 'Noodle Time',
+  address: '605 Battery St',
+  website: 'https://noodletimesf.com/',
+  dollar_sign: '$$',
+  category: "noodles",
+  phone: "64912390",
+  latitude: 37.796996,
+  longitude: -122.400881
+)
+
+noodleTime.photos.attach(io: File.open('./app/assets/images/yelp_splash_1.jpg'), filename: 'yelp_splash_1.jpg')
+# noodleTime.photos.attach(io: File.open('./app/assets/images/yelp_splash_2.jpg'), filename: 'yelp_splash_2.jpg')
+# noodleTime.photos.attach(io: File.open('./app/assets/images/yelp_splash_3.jpg'), filename: 'yelp_splash_3.jpg')
