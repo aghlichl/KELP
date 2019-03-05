@@ -257,16 +257,14 @@ window.login = login;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Footer_footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Footer/footer */ "./frontend/components/Footer/footer.jsx");
-/* harmony import */ var _Splash_splash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Splash/splash */ "./frontend/components/Splash/splash.jsx");
-/* harmony import */ var _business_business_view_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./business/business_view_container */ "./frontend/components/business/business_view_container.jsx");
-/* harmony import */ var _business_index_business_index_view_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./business_index/business_index_view_container */ "./frontend/components/business_index/business_index_view_container.jsx");
-/* harmony import */ var _error_error_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./error/error_page */ "./frontend/components/error/error_page.jsx");
-/* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
-/* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
-/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-
+/* harmony import */ var _Splash_splash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Splash/splash */ "./frontend/components/Splash/splash.jsx");
+/* harmony import */ var _business_business_view_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./business/business_view_container */ "./frontend/components/business/business_view_container.jsx");
+/* harmony import */ var _business_index_business_index_view_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./business_index/business_index_view_container */ "./frontend/components/business_index/business_index_view_container.jsx");
+/* harmony import */ var _error_error_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./error/error_page */ "./frontend/components/error/error_page.jsx");
+/* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
+/* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
 
 
@@ -278,32 +276,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
-    exact: true,
-    path: "/",
-    component: _Splash_splash__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["AuthRoute"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_7__["AuthRoute"], {
     exact: true,
     path: "/login",
-    component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["AuthRoute"], {
+    component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_7__["AuthRoute"], {
     exact: true,
     path: "/signup",
-    component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
+    component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Route"], {
     exact: true,
     path: "/businesses/:id",
-    component: _business_business_view_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
+    component: _business_business_view_container__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Route"], {
     exact: true,
     path: "/businesses",
-    component: _business_index_business_index_view_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
-    component: _error_error_page__WEBPACK_IMPORTED_MODULE_5__["default"]
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
+    component: _business_index_business_index_view_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Route"], {
+    exact: true,
     path: "/",
-    component: _Footer_footer__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }));
+    component: _Splash_splash__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Route"], {
+    component: _error_error_page__WEBPACK_IMPORTED_MODULE_4__["default"]
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -349,23 +344,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _search_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../search/search */ "./frontend/components/search/search.jsx");
-/* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
+/* harmony import */ var _Footer_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Footer/footer */ "./frontend/components/Footer/footer.jsx");
+/* harmony import */ var _business_index_business_index_view_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../business_index/business_index_view_container */ "./frontend/components/business_index/business_index_view_container.jsx");
+/* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
+
+
 
 
 
 
 var Splash = function Splash() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "background"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "splash-content-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "splash-logo-search"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "logo-pic"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index_business_index_view_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);
@@ -543,15 +544,26 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "business-index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Top Businesses"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "business-index-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find the Best Businesses in Town")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "business-index-container"
       }, this.props.businesses.map(function (biz) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "business-index-item",
           key: biz.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "top-img-div"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "top-img",
+          src: biz.photo
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "top-img-head"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "businesses/".concat(biz.id)
-        }, biz.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, biz.dollar_sign));
+        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+          className: "top-img-link"
+        }, biz.name), " ")));
       })));
     }
   }]);

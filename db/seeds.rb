@@ -23,3 +23,18 @@ noodleTime = Business.create!(
 noodleTime.photos.attach(io: File.open('./app/assets/images/yelp_splash_1.jpg'), filename: 'yelp_splash_1.jpg')
 # noodleTime.photos.attach(io: File.open('./app/assets/images/yelp_splash_2.jpg'), filename: 'yelp_splash_2.jpg')
 # noodleTime.photos.attach(io: File.open('./app/assets/images/yelp_splash_3.jpg'), filename: 'yelp_splash_3.jpg')
+
+
+zazie = Business.create!(
+  name: 'Zazie',
+  address: '941 Cole St
+  San Francisco, CA 94117',
+  website: 'https://www.zaziesf.com/',
+  dollar_sign: '$$',
+  category: "Breakfast & Brunch",
+  phone: "(415)564-5332",
+  latitude: 37.765250,
+  longitude: -122.450030
+)
+
+zazie.photos.attach(io: File.open('./app/assets/images/seed_2.jpg'), filename: 'seed_2.jpg')

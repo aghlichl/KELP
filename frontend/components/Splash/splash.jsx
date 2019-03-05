@@ -1,9 +1,12 @@
 import React from 'react'
 import Search from '../search/search'
+import Footer from '../Footer/footer'
+import BusinessIndex from '../business_index/business_index_view_container'
 import GreetingContainer from '../greeting/greeting_container'
+
 const Splash = () => {
     return (
-        
+          <div className='splash'>
           <div id="background">
             <div className="splash-content-container">
                 <GreetingContainer />
@@ -15,7 +18,16 @@ const Splash = () => {
                   </div>
               </div>
             </div>
-    )
+
+            <div>
+                <BusinessIndex />
+            </div>
+
+            <div>
+                <Footer /> 
+            </div>
+        </div>
+        )
 }
 
 export default Splash;
