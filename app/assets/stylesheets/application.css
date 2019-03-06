@@ -157,12 +157,13 @@ body{
  }
 
  .login-main-content{
+    max-width: 960px;
      display: flex;
      flex-direction: row;
      justify-content: space-around;
      align-items: center;
-     padding-top: 150px;
-     margin: 0 300px;
+     padding-top: 250px;
+     margin: 0 500px;
      padding-bottom: 36px;
  }
 
@@ -175,8 +176,10 @@ body{
 
  .footer-container{
      border-top: 1px solid #ccc;
-     background: rgb(245, 245, 245);
+     background: rgb(245, 245, 245) bottom;
      height: 150px;
+     position: absolute;
+     bottom: 0;
      width: 100%;
      margin: 0 auto;
  }
@@ -209,7 +212,6 @@ body{
 
 .login-aside img{
     margin-top: -80px;
-    transform: scale(0.8)
 }
 
 .login-form{

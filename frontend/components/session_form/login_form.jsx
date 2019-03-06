@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Footer from '../Footer/footer'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -80,6 +80,7 @@ class LoginForm extends React.Component {
                         <img src="https://s3-media4.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"></img>
                     </div>
                 </div>
+                <Footer />
             </>
         );
     }
