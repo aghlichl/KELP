@@ -38,3 +38,5 @@ zazie = Business.create!(
 )
 
 zazie.photos.attach(io: File.open('./app/assets/images/seed_2.jpg'), filename: 'seed_2.jpg')
+zazie.photos.attach(io: File.open('./app/assets/images/zazzie.jpg'), filename: 'zazzie.jpg')
+zazie.photos.attach(io: File.open('./app/assets/images/zazzie_3.jpg'), filename: 'zazzie_3.jpg')

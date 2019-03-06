@@ -1,8 +1,13 @@
 class Api::BusinessesController < ApplicationController
 
   def index
-    @businesses = Business.all
-    render :index
+    if searchName
+      @businesses = Business.with_attached_photos.where('name ILIKE ?', "%#{searchName}%")
+    else 
+      @businesses = Business.with_attached_photos
+    end 
+      
+      render :index
   end
 
   def show
@@ -10,9 +15,8 @@ class Api::BusinessesController < ApplicationController
     render :show
   end
 
-
-  def business_params
-    params.require(:business).permit(:title, photos: [])
-  end
+  def searchName
+    params[:name]
+  end 
   
 end

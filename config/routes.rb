@@ -5,6 +5,4 @@ Rails.application.routes.draw do
     resource :session, only:[:create, :destroy]
     resources :businesses, only: [:index, :show]
   end
-
-    resources :businesses, only: :show
 end

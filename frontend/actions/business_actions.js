@@ -1,5 +1,4 @@
 import * as APIUtil from '../util/business_api_util';
-
 export const RECEIVE_BUSINESSES = 'RECEIVE_BUSINESSES';
 export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
 export const RECEIVE_BACKEND_ERRORS = 'RECEIVE_BACKEND_ERRORS';
@@ -28,6 +27,13 @@ export const fetchAll = () => dispatch => (
         dispatch(receiveBusinesses(businesses))), err => (
             dispatch(receiveErrors(err.responseJSON))
         ))
+);
+
+export const searchBusinesses = (name) => dispatch => (
+    APIUtil.searchAll(name).then(businesses => (
+        dispatch(receiveBusinesses(businesses))), err => (
+            dispatch(receiveErrors(err.responseJSON))
+            ))
 );
 
 export const fetchBusiness = (id) => dispatch => (

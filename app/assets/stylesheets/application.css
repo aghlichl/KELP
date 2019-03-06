@@ -469,3 +469,293 @@ select {
     border: 1px solid #e6e6e6;
     border-radius: 0 0 4px 4px;
 }
+
+
+
+
+
+
+
+.business-view-view .header {
+  display: grid;
+  grid-template-areas:
+    "nav_left  nav_content   nav_right";
+  background-color: red;
+  grid-template-columns: 1fr 960px 1fr;
+  grid-template-rows: 68px;
+
+}
+.business-view-view .header .nav_left {
+  grid-area: nav_left;
+}
+.business-view-view .header .nav_right {
+  grid-area: nav_right;
+}
+
+.business-view-view .header .nav_content {
+  grid-area: nav_content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.business-view-view .header .nav_content h1 {
+  margin: auto;
+  font-family: 'Courgette',
+  cursive;
+  font-size: 2em;
+  padding: 10px;
+  text-shadow: -1px 0 white,
+  0 1px white,
+  1px 0 white,
+  0 -1px white;
+}
+.business-view-view .header .nav_content h1 a {
+  color: black;
+  text-decoration: none;
+}
+
+.business-view {
+  width: 960;
+  height: 443;
+  background-color: rgb(245, 245, 245);
+  display: grid;
+  grid-template-areas:
+    "left  info     info     review   right"
+    "left  map      images   images   right"
+    "left  reviews  reviews  aside  right";
+
+  grid-template-columns: 1fr auto auto auto 1fr;
+  grid-template-rows: auto auto auto;
+}
+
+
+.business-view .left {
+  grid-area: left;
+}
+
+.bottom {
+  grid-area: bottom;
+}
+
+.business-view .right {
+  grid-area: right;
+}
+
+.business-view .info {
+  grid-area: info;
+  width: 555px;
+  height: 112px;
+  padding: 10px;
+}
+
+.business-view .map {
+  grid-area: map;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  max-height: 300px;
+  max-width: 330px;
+  background-color: white;
+  border: solid;
+  border-width: 1px;
+  position: relative;
+  top: -30px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+#actual-map img{
+  width: 286px;
+  height: 135px;
+  object-fit: cover;
+  z-index: 1;
+  transition: all .2s; 
+  max-height: 135px;
+  max-width: 286px;
+  border: 1px solid #ccc;
+}
+
+#actual-map img:hover{
+  transform: scale(1);
+  box-shadow: none;
+}
+
+.business-view .map address {
+  font-style: normal;
+}
+
+.business-view .images {
+  grid-area: images;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 660px;
+  height: 220px;
+}
+
+.business-view .review {
+  grid-area: review;
+  width: 405px;
+  height: 112px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.business-view .review button {
+  color: #fff;
+  background: #d32323;
+  border: 1px solid #d32323;
+  transition: all 0.5s ease-in-out;
+
+  font-size: 14px;
+  line-height: 1.28571em;
+  padding: 8px 19px 9px;
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-stretch: 100%;
+  cursor: not-allowed;
+}
+
+.business-view .review button:hover {
+  opacity: 0.6;
+}
+
+
+.business-view img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  z-index: 1;
+  transition: all .2s ease-in-out;
+  
+}
+
+.business-view img:nth-child(2) {
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.business-view img:nth-child(odd):hover~img:nth-child(2) {
+  width: 220px;
+  height: 220px;
+}
+
+.business-view img:hover {
+  width: 250px;
+  height: 250px;
+  transform: scale(1.1);
+  z-index: 2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.business-view h1 {
+  font-size: 36px;
+}
+
+.business-view address {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.reviews {
+  grid-area: reviews;
+  padding: 200px 20px;
+  background-color: white;
+  color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.aside{
+  background: white;
+}
+
+.hours{
+  min-width: 36px;
+  padding-top: 36px;
+  padding-left: 30px;
+  margin-bottom: 24px;
+}
+
+.business-info{
+  min-width: 36px;
+  padding-top: 36px;
+  padding-left: 30px;
+  margin-bottom: 24px;
+}
+
+.hours table{
+  min-width: 54px;
+  max-height: 18px;
+  max-width: 130px;
+  min-height: 18px;
+  padding-right: 18px;
+}
+
+.hours table tr td{
+  font-size: 12px;
+  text-align: left;
+  min-width: 54px;
+  min-height: 18px;
+}
+
+.hours table{
+  padding-left: 30px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  border-left: 1px solid rgb(245, 245, 245);
+}
+
+.business-info table{
+  padding-left: 30px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  border-left: 1px solid rgb(245, 245, 245);
+}
+
+.hours th{
+    padding-bottom: 16px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.3125em;
+    color: #d32323;
+}
+
+.business-info th{
+  padding-bottom: 16px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.3125em;
+    color: #d32323;
+}
+
+.business-info table tr td{
+  font-size: 12px;
+  text-align: left;
+  min-width: 54px;
+  min-height: 18px;
+}
+
+#table-times{
+  min-width: 130px;
+  min-height: 18px;
+}
+
+#business-info-att{
+  padding-bottom: 6px;
+}
+
+address{
+      display: block;
+    font-style: normal;
+}
+

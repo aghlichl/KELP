@@ -1,5 +1,5 @@
 import React from 'react'
-import Search from '../search/search'
+import SearchContainer from '../search/search_container'
 import Footer from '../Footer/footer'
 import BusinessIndex from '../business_index/business_index_view_container'
 import GreetingContainer from '../greeting/greeting_container'
@@ -14,7 +14,7 @@ const Splash = () => {
                     <div className="logo-pic">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img>
                     </div>         
-                    <Search />
+                    <SearchContainer />
                   </div>
               </div>
             </div>
