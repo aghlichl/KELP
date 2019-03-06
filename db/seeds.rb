@@ -20,9 +20,9 @@ noodleTime = Business.create!(
   longitude: -122.400881
 )
 
-noodleTime.photos.attach(io: File.open('./app/assets/images/yelp_splash_1.jpg'), filename: 'yelp_splash_1.jpg')
-# noodleTime.photos.attach(io: File.open('./app/assets/images/yelp_splash_2.jpg'), filename: 'yelp_splash_2.jpg')
-# noodleTime.photos.attach(io: File.open('./app/assets/images/yelp_splash_3.jpg'), filename: 'yelp_splash_3.jpg')
+noodleTime.photos.attach(io: File.open('./app/assets/images/noodle_1.jpg'), filename: 'noodle_1.jpg')
+noodleTime.photos.attach(io: File.open('./app/assets/images/noodle_2.jpg'), filename: 'noodle_2.jpg')
+noodleTime.photos.attach(io: File.open('./app/assets/images/noodle_3.jpg'), filename: 'noodle_3.jpg')
 
 
 zazie = Business.create!(
@@ -40,3 +40,72 @@ zazie = Business.create!(
 zazie.photos.attach(io: File.open('./app/assets/images/seed_2.jpg'), filename: 'seed_2.jpg')
 zazie.photos.attach(io: File.open('./app/assets/images/zazzie.jpg'), filename: 'zazzie.jpg')
 zazie.photos.attach(io: File.open('./app/assets/images/zazzie_3.jpg'), filename: 'zazzie_3.jpg')
+
+
+surisan = Business.create!(
+  name: 'Surisan',
+  address: '505 Beach St
+San Francisco, CA 94133',
+  website: 'https://www.surisansf.com/',
+  dollar_sign: '$$',
+  category: "Korean",
+  phone: "(415)771-8449",
+  latitude: 37.806965,
+  longitude: -122.417453
+)
+
+surisan.photos.attach(io: File.open('./app/assets/images/surisan_1.jpg'), filename: 'surisan_1.jpg')
+surisan.photos.attach(io: File.open('./app/assets/images/surisan_2.jpg'), filename: 'surisan_2.jpg')
+surisan.photos.attach(io: File.open('./app/assets/images/surisan_3.jpg'), filename: 'surisan_3.jpg')
+
+
+
+fog_harbor = Business.create!(
+  name: 'Fog Harbor Fish House',
+  address: 'Pier 39
+  San Francisco, CA 94133',
+  website: 'https://www.fogharbor.com/',
+  dollar_sign: '$$',
+  category: "Seafood & Bar",
+  phone: "(415)421-2442",
+  latitude: 37.806784,
+  longitude: -122.417557
+)
+
+fog_harbor.photos.attach(io: File.open('./app/assets/images/fog_harbor_1.jpg'), filename: 'fog_harbor_1.jpg')
+fog_harbor.photos.attach(io: File.open('./app/assets/images/fog_harbor_2.jpg'), filename: 'fog_harbor_2.jpg')
+fog_harbor.photos.attach(io: File.open('./app/assets/images/fog_harbor_3.jpg'), filename: 'fog_harbor_3.jpg')
+
+
+
+mango_crazy = Business.create!(
+  name: 'Mango Crazy',
+  address: '51 Jefferson St
+San Francisco, CA 94133',
+  website: 'https://www.mangocrazy.com/',
+  dollar_sign: '$$',
+  category: "Specialty Food",
+  phone: "(415)926-8075",
+  latitude: 37.808440,
+  longitude: -122.413342
+)
+
+mango_crazy.photos.attach(io: File.open('./app/assets/images/mango_crazy_1.jpg'), filename: 'mango_crazy_1.jpg')
+mango_crazy.photos.attach(io: File.open('./app/assets/images/mango_crazy_2.jpg'), filename: 'mango_crazy_2.jpg')
+mango_crazy.photos.attach(io: File.open('./app/assets/images/mango_crazy_3.jpg'), filename: 'mango_crazy_3.jpg')
+
+wayfare_tavern = Business.create!(
+  name: 'Wayfare Tavern',
+  address: '558 Sacramento St
+San Francisco, CA 94111',
+  website: 'https://www.wayfaretavern.com/',
+  dollar_sign: '$$$',
+  category: "American(Traditional)",
+  phone: "(415)772-9060",
+  latitude: 37.794016,
+  longitude: -122.402350
+)
+
+wayfare_tavern.photos.attach(io: File.open('./app/assets/images/wayfare_1.jpg'), filename: 'wayfare_1.jpg')
+wayfare_tavern.photos.attach(io: File.open('./app/assets/images/wayfare_2.jpg'), filename: 'wayfare_2.jpg')
+wayfare_tavern.photos.attach(io: File.open('./app/assets/images/wayfare_3.jpg'), filename: 'wayfare_3.jpg')

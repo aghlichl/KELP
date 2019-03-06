@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchContainer from '../search/search_container';
+import SearchNavContainer from '../search/search_nav_container';
 import { Link } from 'react-router-dom';
 
 class BusinessView extends React.Component {
@@ -21,9 +21,23 @@ class BusinessView extends React.Component {
 
         return (
             <>
-            <div className="login-nav"> <SearchContainer /> <Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img></Link> </div>
+            <div className="search_results">
+                <div className="nav_center">
+                    <Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img></Link>
+                    <SearchNavContainer />
+                    <button className="search-login"><Link to="/login"> Login</Link></button>
+                    <button className="search-signup">  <Link to="/signup">Sign Up</Link></button>
+
+                </div>
+                <div className="nav_left"></div>
+                <div className="nav_right"> </div>
+                <div className="con_left"></div>
+                <div className="con_right"></div>
+            </div>
             <div className="business-view-view">
                 <div className="business-view">
+                    <div className="left-b"></div>
+                    <div className="right-b"></div>
                     <div className="info">
                         <h1>{business.name}</h1>
                         <div className="price">
@@ -35,7 +49,7 @@ class BusinessView extends React.Component {
                             <i className="fas fa-star"></i>
                             &nbsp;
                             Write a Review
-            </button>
+                        </button>
                     </div>
                     <div className="map">
                         <div id="actual-map">
@@ -51,7 +65,7 @@ class BusinessView extends React.Component {
                             <div>
                                     <i class="fas fa-directions"></i> <a href={business.website}>Get Directions</a>
                             </div>
-                            <div>
+                            <div className='rotate-phone'>
                                 <i class="fas fa-phone"></i> {business.phone}
                             </div>
                         

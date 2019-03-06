@@ -400,7 +400,7 @@ var Splash = function Splash() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _search_search_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../search/search_container */ "./frontend/components/search/search_container.jsx");
+/* harmony import */ var _search_search_nav_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../search/search_nav_container */ "./frontend/components/search/search_nav_container.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -454,16 +454,38 @@ function (_React$Component) {
       if (!this.props.business.photoUrls) return null;
       var business = this.props.business;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-nav"
-      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "search_results"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav_center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"
-      })), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search_nav_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "search-login"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/login"
+      }, " Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "search-signup"
+      }, "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/signup"
+      }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav_left"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav_right"
+      }, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "con_left"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "con_right"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "business-view-view"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "business-view"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "left-b"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "right-b"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, business.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "price"
@@ -489,7 +511,9 @@ function (_React$Component) {
         class: "fas fa-directions"
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: business.website
-      }, "Get Directions")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, "Get Directions")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rotate-phone"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         class: "fas fa-phone"
       }), " ", business.phone))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "images"
@@ -802,7 +826,7 @@ var Greeting = function Greeting(_ref) {
       id: "demo_button",
       onClick: loginDemoUser
     }, "Demo"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Link"], {
-      className: "login-button-splash",
+      id: "login-button-splash",
       to: "/login"
     }, "Login"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Link"], {
       id: "demo_button",
@@ -1034,6 +1058,151 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/search/search_nav.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/search/search_nav.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchNav; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var SearchNav =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SearchNav, _React$Component);
+
+  function SearchNav(props) {
+    var _this;
+
+    _classCallCheck(this, SearchNav);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchNav).call(this, props));
+    _this.state = {
+      name: ''
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(SearchNav, [{
+    key: "update",
+    value: function update(field) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this3 = this;
+
+      e.preventDefault();
+      this.props.searchBusinesses(this.state.name).then(function () {
+        return _this3.props.history.push('/search');
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {}
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-bar-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "find-input-nav",
+        type: "text",
+        placeholder: "Find",
+        name: "Find",
+        onChange: this.update('name')
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "near-input-nav",
+        type: "text",
+        placeholder: "Near",
+        name: "Location"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "search-button-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-search"
+      }))));
+    }
+  }]);
+
+  return SearchNav;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+
+/***/ }),
+
+/***/ "./frontend/components/search/search_nav_container.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/search/search_nav_container.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _search_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search_nav */ "./frontend/components/search/search_nav.jsx");
+/* harmony import */ var _actions_business_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/business_actions */ "./frontend/actions/business_actions.js");
+/* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    businesses: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["selectAllBusinesses"])(state)
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    searchBusinesses: function searchBusinesses(name) {
+      return dispatch(Object(_actions_business_actions__WEBPACK_IMPORTED_MODULE_2__["searchBusinesses"])(name));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_search_nav__WEBPACK_IMPORTED_MODULE_1__["default"])));
+
+/***/ }),
+
 /***/ "./frontend/components/search/search_results.jsx":
 /*!*******************************************************!*\
   !*** ./frontend/components/search/search_results.jsx ***!
@@ -1044,7 +1213,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchResults; });
-/* harmony import */ var _search_search_container__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../search/search_container */ "./frontend/components/search/search_container.jsx");
+/* harmony import */ var _search_search_nav_container__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../search/search_nav_container */ "./frontend/components/search/search_nav_container.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
@@ -1087,24 +1256,61 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_0__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "search-results"
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "search_results"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "nav_center"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+        src: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_search_search_nav_container__WEBPACK_IMPORTED_MODULE_0__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        className: "search-login"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/login"
+      }, " Login")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        className: "search-signup"
+      }, "  ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/signup"
+      }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "nav_left"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "nav_right"
+      }, " "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "con_left"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "con_right"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "con_center"
       }, this.props.businesses.map(function (biz) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "business-index-item",
+          className: "single-result",
           key: biz.id
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "top-img-div"
+          className: "single-result-thumb"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-          className: "top-img",
           src: biz.photo
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "single-result-side"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "single-result-side-top"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "top-img-head"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "businesses/".concat(biz.id)
         }, " ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
           className: "top-img-link"
-        }, biz.name), " ")));
+        }, biz.name), " ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "review-count"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: "https://www.brewensinfinityexperiences.com/wp-content/uploads/2014/03/Yelp-5-stars-300x59.png"
+        }), " 1071 reviews"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "dollar-sign-cat"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+          id: "dollar-sign"
+        }, biz.dollar_sign), " ", biz.category)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "single-result-address"
+        }, biz.address)));
       })));
     }
   }]);

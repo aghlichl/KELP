@@ -7,7 +7,7 @@ const Greeting = ({ currentUser, logout, loginDemoUser }) => {
                 <button id="demo_button"
                     onClick={loginDemoUser}>Demo
                 </button>
-            <Link className="login-button-splash" to="/login">Login</Link>
+            <Link id="login-button-splash" to="/login">Login</Link>
             <br></br>
             <Link id="demo_button" to="/signup">Sign up!</Link>
         </nav>
