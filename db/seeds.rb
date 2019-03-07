@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Business.delete_all
+User.delete_all
+Review.delete_all
 
 
 noodleTime = Business.create!(
@@ -109,3 +111,31 @@ San Francisco, CA 94111",
 wayfare_tavern.photos.attach(io: File.open("#{Rails.root}/app/assets/images/wayfare_1.jpg"), filename: "wayfare_1.jpg")
 wayfare_tavern.photos.attach(io: File.open("#{Rails.root}/app/assets/images/wayfare_2.jpg"), filename: "wayfare_2.jpg")
 wayfare_tavern.photos.attach(io: File.open("#{Rails.root}/app/assets/images/wayfare_3.jpg"), filename: "wayfare_3.jpg")
+
+user_1 = User.create!(
+  id: 1,
+  email: "cool_story@bro.com",
+  password: "password"
+)
+
+user_2 = User.create!(
+  id: 2,
+  email: "whoa_fam@gmail.com",
+  password: "wokewoke"
+)
+
+
+
+comment_1 = Review.create!(
+  rating: 3,
+  body: "could use some work EWWWW",
+  user_id:1,
+  business_id:1
+)
+
+comment_2 = Review.create!(
+  rating: 3,
+  body: "I agree With cool story",
+  user_id:2,
+  business_id:1
+)

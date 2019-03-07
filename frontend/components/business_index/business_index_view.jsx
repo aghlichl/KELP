@@ -9,6 +9,7 @@ export default class BusinessIndex extends Component {
 
     render() {
         return (
+            <>
             <div className="business-index">
                 <div className='business-index-header'>
                     <h1>Find the Best Businesses in Town</h1>
@@ -29,6 +30,7 @@ export default class BusinessIndex extends Component {
                     }
                 </div>
             </div>
+            </>
         );
     }
 }

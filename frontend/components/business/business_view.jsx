@@ -1,29 +1,34 @@
 import React from 'react';
+import ReviewIndexContainer from '../review/review_index_container'
 import SearchNavContainer from '../search/search_nav_container';
 import { Link } from 'react-router-dom';
 
 class BusinessView extends React.Component {
     constructor(props) {
         super(props);
-        let businessId = props.match.params.id;
+        let businessId = props.match.params.businessId;
         this.state = { businessId };
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchBusiness(this.state.businessId);
     }
 
     render() {
         if (!this.props.business) return null;
         if (!this.props.business.photoUrls) return null;
+        if(!this.props.reviews) return null;
 
         const business = this.props.business;
 
+        
+        
         return (
             <>
             <div className="search_results">
                 <div className="nav_center">
-                    <Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img></Link>
+                    <Link to="/"><img src={window.images.logo}></img></Link>
                     <SearchNavContainer />
                     <button className="search-login"><Link to="/login"> Login</Link></button>
                     <button className="search-signup">  <Link to="/signup">Sign Up</Link></button>
@@ -57,16 +62,16 @@ class BusinessView extends React.Component {
                         </div>
                         <div className="map-info"> 
                             <address>
-                                    <i class="fas fa-map-marker-alt"></i> {business.address}
+                                    <i className="fas fa-map-marker-alt"></i> {business.address}
                             </address>
                                 <div>
-                                    <i class="fas fa-external-link-alt"></i> <a href={business.website}>{business.website}</a>
+                                    <i className="fas fa-external-link-alt"></i> <a href={business.website}>{business.website}</a>
                                 </div>
                             <div>
-                                    <i class="fas fa-directions"></i> <a href={business.website}>Get Directions</a>
+                                    <i className="fas fa-directions"></i> <a href={business.website}>Get Directions</a>
                             </div>
                             <div className='rotate-phone'>
-                                <i class="fas fa-phone"></i> {business.phone}
+                                <i className="fas fa-phone"></i> {business.phone}
                             </div>
                         
                         </div>
@@ -83,7 +88,8 @@ class BusinessView extends React.Component {
                     <div className="reviews">
                         <h1>
                             Reviews coming soon!
-            </h1>
+                        </h1>
+                        <ReviewIndexContainer />
                     </div>
                     <div className="aside">
                             <div className="hours">

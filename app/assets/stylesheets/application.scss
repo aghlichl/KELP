@@ -87,6 +87,7 @@
  #background{
     background-image: image-url('yelp_splash_2.jpg');
     height: 570px;
+    padding-top: 30px;
     background-color: #333;
     background-size: cover;
     background-position: 50%;
@@ -98,7 +99,6 @@
 }
 
 .logo-pic img{
-    transform: scale(0.4);
     display: flex;
     margin: 0 auto;
 }
@@ -178,8 +178,7 @@ body{
      border-top: 1px solid #ccc;
      background: rgb(245, 245, 245) bottom;
      height: 150px;
-     position: absolute;
-     bottom: 0;
+
      width: 100%;
      margin: 0 auto;
  }
@@ -199,6 +198,10 @@ body{
      height: 400px;
      width: 100%;
      background: violet;
+ }
+
+ #sign-up-up{
+   padding-bottom: 12px;
  }
 
  .login-text{
@@ -856,6 +859,7 @@ address{
 a:-webkit-any-link{
   color: black;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .rotate-phone i{

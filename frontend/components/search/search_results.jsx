@@ -13,7 +13,7 @@ export default class SearchResults extends React.Component {
         return(
             <div className="search_results"> 
                 <div className="nav_center">  
-                    <Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img></Link> 
+                    <Link to="/"><img src={window.images.logo}></img></Link> 
                     <SearchNavContainer />
                     <button className="search-login"><Link to="/login"> Login</Link></button>
                     <button className="search-signup">  <Link to="/signup">Sign Up</Link></button>

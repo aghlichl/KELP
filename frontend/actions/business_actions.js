@@ -4,14 +4,18 @@ export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
 export const RECEIVE_BACKEND_ERRORS = 'RECEIVE_BACKEND_ERRORS';
 export const CLEAR_BACKEND_ERRORS = 'CLEAR_BACKEND_ERRORS';
 
-export const receiveBusinesses = payload => ({
+ export const receiveBusinesses = payload => ({
     type: RECEIVE_BUSINESSES,
     payload
 });
-export const receiveBusiness = business => ({
+export const receiveBusiness = (payload) => {
+        return(
+    {
     type: RECEIVE_BUSINESS,
-    business
-});
+    payload
+    }
+    )
+};
 
 export const receiveErrors = errors => ({
     type: RECEIVE_BACKEND_ERRORS,
