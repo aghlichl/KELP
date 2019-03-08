@@ -6,6 +6,17 @@ import Footer from '../Footer/footer'
 
 
 const Splash = () => {
+    // const splashImages = ['yelp_splash_1', 'yelp_splash_2', 'yelp_splash_3'];
+    // const randomImage = splashImages[Math.floor(Math.random() * splashImages.length)];
+
+    // setTimeout(() => {
+        // debugger
+        // $('#background').css({
+        //     'background-image': `url(${window.images[randomImage]})`
+        // });
+    // }, 0)
+
+    // window.backgroundImage = window.images[randomImage];
     return (
         <>
           <div className='splash'>

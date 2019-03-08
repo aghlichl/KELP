@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SearchResults from './search_results';
-import { searchBusinesses } from '../../actions/business_actions';
+import { searchBusinesses, fetchAll } from '../../actions/business_actions';
 import { selectAllBusinesses } from '../../reducers/selectors';
 
 
@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+    fetchAll: () => dispatch(fetchAll()),
     searchBusinesses: (name) => dispatch(searchBusinesses(name))
 });
 

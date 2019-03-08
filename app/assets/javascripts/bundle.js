@@ -418,6 +418,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Splash = function Splash() {
+  // const splashImages = ['yelp_splash_1', 'yelp_splash_2', 'yelp_splash_3'];
+  // const randomImage = splashImages[Math.floor(Math.random() * splashImages.length)];
+  // setTimeout(() => {
+  // debugger
+  // $('#background').css({
+  //     'background-image': `url(${window.images[randomImage]})`
+  // });
+  // }, 0)
+  // window.backgroundImage = window.images[randomImage];
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "splash"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -495,7 +504,6 @@ function (_React$Component) {
   _createClass(BusinessView, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
       this.props.fetchBusiness(this.state.businessId);
     }
   }, {
@@ -505,6 +513,41 @@ function (_React$Component) {
       if (!this.props.business.photoUrls) return null;
       if (!this.props.reviews) return null;
       var business = this.props.business;
+
+      function formatRatings(avgRating) {
+        var avgRatingFloat = parseFloat(avgRating);
+        avgRatingFloat = avgRatingFloat + 0.01;
+        var classer = "";
+
+        if (avgRatingFloat <= 1.0) {
+          classer = "star-one";
+          return classer;
+        } else if (avgRatingFloat <= 1.5) {
+          classer = "star-one-five";
+          return classer;
+        } else if (avgRatingFloat <= 2.0) {
+          classer = "star-two";
+          return classer;
+        } else if (avgRatingFloat <= 2.5) {
+          classer = "star-two-five";
+          return classer;
+        } else if (avgRatingFloat <= 3.0) {
+          classer = "star-three";
+          return classer;
+        } else if (avgRatingFloat <= 3.5) {
+          classer = "star-three-five";
+          return classer;
+        } else if (avgRatingFloat <= 4.0) {
+          classer = "star-four";
+          return classer;
+        } else if (avgRatingFloat <= 4.5) {
+          classer = "star-four-five";
+          return classer;
+        } else {
+          return "star-five";
+        }
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search_results"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -540,6 +583,10 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, business.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-count"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: formatRatings(business.averageStars)
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "       ", "  ".concat(business.numReviews, " Reviews"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "price"
       }, business.priceRange)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review"
@@ -581,7 +628,7 @@ function (_React$Component) {
         className: "left"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "reviews"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Reviews coming soon!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_review_index_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_review_index_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "aside"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hours"
@@ -754,7 +801,7 @@ function (_Component) {
         className: "business-index-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find the Best Businesses in Town")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "business-index-container"
-      }, this.props.businesses.map(function (biz) {
+      }, this.props.businesses.slice(0, 3).map(function (biz) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "business-index-item",
           key: biz.id
@@ -764,11 +811,11 @@ function (_Component) {
           className: "top-img",
           src: biz.photo
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "top-img-head"
+          className: "top-img-head-2"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "businesses/".concat(biz.id)
         }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-          className: "top-img-link"
+          className: "top-img-link-2"
         }, biz.name), " ")));
       }))));
     }
@@ -988,13 +1035,62 @@ function (_React$Component) {
   _createClass(ReviewIndex, [{
     key: "render",
     value: function render() {
-      // debugger
       if (!this.props.reviews) return null;
+
+      function formatRatings(avgRating) {
+        var avgRatingFloat = parseFloat(avgRating);
+        avgRatingFloat = avgRatingFloat + 0.01;
+        var classer = "";
+
+        if (avgRatingFloat <= 1.0) {
+          classer = "star-one";
+          return classer;
+        } else if (avgRatingFloat <= 1.5) {
+          classer = "star-one-five";
+          return classer;
+        } else if (avgRatingFloat <= 2.0) {
+          classer = "star-two";
+          return classer;
+        } else if (avgRatingFloat <= 2.5) {
+          classer = "star-two-five";
+          return classer;
+        } else if (avgRatingFloat <= 3.0) {
+          classer = "star-three";
+          return classer;
+        } else if (avgRatingFloat <= 3.5) {
+          classer = "star-three-five";
+          return classer;
+        } else if (avgRatingFloat <= 4.0) {
+          classer = "star-four";
+          return classer;
+        } else if (avgRatingFloat <= 4.5) {
+          classer = "star-four-five";
+          return classer;
+        } else {
+          return "star-five";
+        }
+      }
+
       var reviews = Object.values(this.props.reviews).map(function (review) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, review.body);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "single_review"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "rssr_rating"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: formatRatings(review.rating)
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "rssr_user"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: window.images.profile_60
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "rssr_feedback"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "rssr_review"
+        }, review.body)));
       });
-      debugger;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reviews);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "reviews"
+      }, reviews);
     }
   }]);
 
@@ -1409,10 +1505,55 @@ function (_React$Component) {
 
   _createClass(SearchResults, [{
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      this.props.fetchAll();
+    }
   }, {
     key: "render",
     value: function render() {
+      function formatPhoneNumber(phoneNumberString) {
+        var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+        var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+
+        if (match) {
+          return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+        }
+
+        return null;
+      }
+
+      function formatRatings(avgRating) {
+        var classer = "";
+
+        if (avgRating <= 1.0) {
+          classer = "star-one";
+          return classer;
+        } else if (avgRating <= 1.5) {
+          classer = "star-one-five";
+          return classer;
+        } else if (avgRating <= 2.0) {
+          classer = "star-two";
+          return classer;
+        } else if (avgRating <= 2.5) {
+          classer = "star-two-five";
+          return classer;
+        } else if (avgRating <= 3.0) {
+          classer = "star-three";
+          return classer;
+        } else if (avgRating <= 3.5) {
+          classer = "star-three-five";
+          return classer;
+        } else if (avgRating <= 4.0) {
+          classer = "star-four";
+          return classer;
+        } else if (avgRating <= 4.5) {
+          classer = "star-four-five";
+          return classer;
+        } else {
+          return "star-five";
+        }
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "search_results"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -1437,7 +1578,9 @@ function (_React$Component) {
         className: "con_left"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "con_right"
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+        src: window.images.map_index
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "con_center"
       }, this.props.businesses.map(function (biz) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -1452,6 +1595,8 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "single-result-side-top"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "single-result-side-top-left"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "top-img-head"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "businesses/".concat(biz.id)
@@ -1459,15 +1604,23 @@ function (_React$Component) {
           className: "top-img-link"
         }, biz.name), " ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "review-count"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-          src: "https://www.brewensinfinityexperiences.com/wp-content/uploads/2014/03/Yelp-5-stars-300x59.png"
-        }), " 1071 reviews"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: formatRatings(biz.averageStars)
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, biz.numReviews, " Reviews")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "dollar-sign-cat"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
           id: "dollar-sign"
-        }, biz.dollar_sign), " ", biz.category)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "single-result-address"
-        }, biz.address)));
+        }, biz.dollarSign), " ", biz.category)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "single-result-side-right"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "single-result-phone-address"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "phone-num"
+        }, formatPhoneNumber(biz.phone)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "address"
+        }, biz.address, " ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), " San Francisco")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "highlight-review"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, biz.review.body))));
       })));
     }
   }]);
@@ -1505,6 +1658,9 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
+    fetchAll: function fetchAll() {
+      return dispatch(Object(_actions_business_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAll"])());
+    },
     searchBusinesses: function searchBusinesses(name) {
       return dispatch(Object(_actions_business_actions__WEBPACK_IMPORTED_MODULE_2__["searchBusinesses"])(name));
     }
@@ -1941,6 +2097,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }), root); // let images = ["url('/Users/ag/Desktop/KELP/skeleton/kelp/app/assets/images/yelp_splash_1.jpg')", "url('/Users/ag/Desktop/KELP/skeleton/kelp/app/assets/images/yelp_splash_2.jpg')", "url('/Users/ag/Desktop/KELP/skeleton/kelp/app/assets/images/yelp_splash_3.jpg')"];
   // let random = Math.floor(Math.random() * 3) + 0;
   // document.getElementById("background").style.backgroundImage = images[random]
+
+  var splashImages = ['yelp_splash_1', 'yelp_splash_2', 'yelp_splash_3', 'yelp_splash_4', 'yelp_splash_5', 'yelp_splash_6', 'yelp_splash_7', 'yelp_splash_8', 'yelp_splash_9', 'yelp_splash_10'];
+  var randomImage = splashImages[Math.floor(Math.random() * splashImages.length)];
+  $('#background').css({
+    'background-image': "url(".concat(window.images[randomImage], ")")
+  });
 });
 
 /***/ }),
@@ -2123,9 +2285,12 @@ var selectBusiness = function selectBusiness(_ref, businessId) {
 };
 var selectReviewsForBusiness = function selectReviewsForBusiness(_ref2, business) {
   var reviews = _ref2.reviews;
-  return business.reviewIds.map(function (reviewId) {
-    return reviews[reviewId];
-  });
+
+  if (business.reviewIds) {
+    return business.reviewIds.map(function (reviewId) {
+      return reviews[reviewId];
+    });
+  }
 };
 
 /***/ }),

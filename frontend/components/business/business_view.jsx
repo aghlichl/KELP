@@ -10,8 +10,9 @@ class BusinessView extends React.Component {
         this.state = { businessId };
     }
 
+    
+
     componentDidMount() {
-        debugger
         this.props.fetchBusiness(this.state.businessId);
     }
 
@@ -22,6 +23,46 @@ class BusinessView extends React.Component {
 
         const business = this.props.business;
 
+        function formatRatings(avgRating) {
+            let avgRatingFloat = parseFloat(avgRating);
+            avgRatingFloat = avgRatingFloat + 0.01;
+            let classer = "";
+            if (avgRatingFloat <= 1.0) {
+                classer = "star-one";
+                return classer;
+            }
+            else if (avgRatingFloat <= 1.5) {
+                classer = "star-one-five";
+                return classer;
+            }
+            else if (avgRatingFloat <= 2.0) {
+                classer = "star-two";
+                return classer;
+            }
+            else if (avgRatingFloat <= 2.5) {
+                classer = "star-two-five";
+                return classer;
+            }
+            else if (avgRatingFloat <= 3.0) {
+                classer = "star-three";
+                return classer;
+            }
+            else if (avgRatingFloat <= 3.5) {
+                classer = "star-three-five";
+                return classer;
+            }
+            else if (avgRatingFloat <= 4.0) {
+                classer = "star-four";
+                return classer;
+            }
+            else if (avgRatingFloat <= 4.5) {
+                classer = "star-four-five";
+                return classer;
+            }
+            else {
+                return "star-five";
+            }
+        }   
         
         
         return (
@@ -45,6 +86,13 @@ class BusinessView extends React.Component {
                     <div className="right-b"></div>
                     <div className="info">
                         <h1>{business.name}</h1>
+                            <div className="review-count">
+                                <div className={formatRatings(business.averageStars)}>
+                                    
+                                </div>
+                                <div>       {`  ${business.numReviews} Reviews`}
+                                                    </div>
+                            </div>
                         <div className="price">
                             {business.priceRange}
                         </div>
@@ -86,9 +134,6 @@ class BusinessView extends React.Component {
                     <div className="left"></div>
 
                     <div className="reviews">
-                        <h1>
-                            Reviews coming soon!
-                        </h1>
                         <ReviewIndexContainer />
                     </div>
                     <div className="aside">

@@ -64,14 +64,6 @@
      color: white;
  }
 
- .error-gif{
-
- }
-
- .error-text{
-
- }
-
 
  .error-footer{
     background: rgb(51, 60,56);
@@ -83,9 +75,13 @@
      display: flex;
      flex-direction: row;
  }
+ $imgKey: random(3);
+
+ $list: yelp_splash_1, yelp_splash_2, yelp_splash_3;
+ $nth: nth($list, $imgKey);
 
  #background{
-    background-image: image-url('yelp_splash_2.jpg');
+    background-image: image-url("#{$nth}.jpg");
     height: 570px;
     padding-top: 30px;
     background-color: #333;
@@ -98,6 +94,9 @@
     max-height: 475px;
 }
 
+.logo-pic{
+  padding: 50px 0;
+}
 .logo-pic img{
     display: flex;
     margin: 0 auto;
@@ -165,12 +164,6 @@ body{
      padding-top: 250px;
      margin: 0 500px;
      padding-bottom: 36px;
- }
-
- .login-main-content div{
-     /* width: 50%;
-    justify-content: flex-end;
-    padding: 45px; */
  }
 
 
@@ -459,9 +452,10 @@ select {
 }
 
 .top-img{
-    width: auto;
-    height: 174px;
+  max-height: 180px;
+    object-fit: cover;
     border-radius: 4px 4px 0 0;
+    min-width: 298px;
 }
 
 
@@ -545,6 +539,7 @@ select {
 
 .business-view .info {
   grid-area: info;
+  line-height: 0.1;
   width: 555px;
   height: 112px;
   padding: 10px;
@@ -673,13 +668,12 @@ select {
 }
 
 .reviews {
+  list-style: none;
+  margin-top: -90px;
   grid-area: reviews;
-  padding: 200px 20px;
-  margin-top:-90px;
-  background-color: white;
-  color: red;
-  display: flex;
-  justify-content: center;
+  background: white;
+  padding-top: 90px;
+
 }
 
 .aside{
@@ -763,9 +757,10 @@ select {
   padding-bottom: 6px;
 }
 
-address{
-      display: block;
+.address{
+    display: block;
     font-style: normal;
+    font-size: 12px;
 }
 
 
@@ -887,6 +882,7 @@ a:-webkit-any-link{
 
  .single-result{
    width: 630px;
+   min-height: 210px;
    padding-top: 18px;
    padding-bottom: 18px;
    display: flex;
@@ -894,7 +890,36 @@ a:-webkit-any-link{
    border-bottom: solid whitesmoke;
  }
 
+//  .single-result-top-info{
+//    display: flex;
+//    flex-direction: row;
+//    height: 68px;
+
+//  }
+
+ .highlight-review{
+   overflow: hidden;
+   max-height: 109px;
+  //  FIX THIS
+   margin-top: 15px;
+ }
+
+//  .highlight-review span{
+//        border: solid 2px blue;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     width: 100px;
+//     display: block;
+//     overflow: hidden
+//  }
+ 
+ .single-result-thumb{
+   width: 228px;
+   height: 210px;
+ }
+
  .single-result-thumb img{
+   object-fit: cover;
    padding-right: 18px;
    border-radius: 4px;
    max-height: 210px;
@@ -906,13 +931,64 @@ a:-webkit-any-link{
 
  .single-result-side-top{
    display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: flex-start;
+  }
+
+  .single-result-phone-address{
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+    padding-top: 5px;
+  }
+
+.single-result-side-top-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 275px;
+}
+
+.top-img-head {
+  max-height: 35px;
+  line-height: 0;
+}
+
+.top-img-head-2{
+  background: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 0 0 4px 4px;
+    text-align: center;
+}
+
+.top-img-link-2{
+  font-size: 14px;
+  line-height: 0;
+  color: black;
+
+}
+
+.top-img-div{
+  height: 180px;
+  width: 298px;
+}
+
+ .single-result-side-right{
+   display: flex;
    flex-direction: column;
+   justify-content: flex-end;
+   font-size: 16px;
+   padding-bottom: 5px;
  }
 
  .single-result-side{
    display: flex;
-   flex-direction: row;
-   justify-content: space-between;
+   flex-direction: column;
+   justify-content: flex-start;
    min-width: 402px;
    max-width: 402px;
    max-height: 210px;
@@ -922,6 +998,7 @@ a:-webkit-any-link{
  .single-result-address{
   text-align: right;
   padding-top: 20px; 
+  font-size: 12px;
  }
 
 .search_results {
@@ -960,6 +1037,11 @@ a:-webkit-any-link{
   background: white;
 }
 
+.search_results .con_right img{
+  position: relative;
+  left: -200px;
+}
+
 .search_results .con_center {
   grid-area: con_center;
   background: white;
@@ -977,6 +1059,16 @@ a:-webkit-any-link{
 .top-img-link{
   text-decoration: none;
   color: #0073bb;
+  font-size: 16px;
+}
+
+.review-count{
+  display: flex; 
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 5px 0;
+  min-height: 24px;
+  align-items: center;
 }
 
 
@@ -990,3 +1082,126 @@ a:-webkit-any-link{
       font-size: 10px;
       margin: 0 6px;
 }
+
+.single_review {
+  display: grid;
+  grid-template-areas: 
+    "rssr_user rssr_rating"
+    "rssr_user rssr_review"
+    "rssr_user rssr_feedback";
+  margin: 17px 0px;
+  grid-template-rows: 30px 180px 5px;
+  grid-template-columns: 217px 370px;
+  border-bottom: 1px solid rgb(245, 245, 245);
+}
+
+.rssr_user {
+  display: flex;
+  grid-area: rssr_user;
+}
+
+.rssr_user img{
+  height: 60px;
+  width: 60px;
+  transform: scale(1);
+
+}
+
+.rssr_user img:hover{
+  height: 60px;
+  width: 60px;
+}
+
+.rssr_rating {
+  grid-area: rssr_rating;
+}
+
+.rssr_review {
+  grid-area: rssr_review;
+  overflow: hidden;
+  // FIX THIS
+}
+
+.rssr_feedback {
+  grid-area: rssr_feedback;
+
+}
+
+
+.review-left{
+  width: 37.5%;
+}
+
+.review-right{
+  width: 62.5%
+}
+
+.review-index{
+  width: 100%;
+}
+
+.star-one{
+  padding-right: 8px;
+	background: image-url('stars.png') no-repeat 0 0;
+	width: 132px;
+	height: 24px;
+}
+
+.star-one-five{
+  padding-right: 8px;
+	background: image-url('stars.png') no-repeat 0 -24px;
+	width: 132px;
+	height: 24px;
+}
+
+.star-two{
+  padding-right: 8px;
+	background: image-url('stars.png') no-repeat 0 -48px;
+	width: 132px;
+	height: 24px;
+}
+
+.star-two-five{
+  padding-right: 8px;
+	background: image-url('stars.png') no-repeat 0 -72px;
+	width: 132px;
+	height: 24px;
+}
+
+.star-three{
+  padding-right: 8px;
+	background: image-url('stars.png') no-repeat 0 -96px;
+	width: 132px;
+	height: 24px;
+}
+
+.star-three-five{
+  padding-right: 8px;
+	background: image-url('stars.png') no-repeat 0 -120px;
+	width: 132px;
+	height: 24px;
+}
+
+.star-four{
+  padding-right: 8px;
+	background: image-url('stars.png') no-repeat 0 -144px;
+	width: 132px;
+	height: 24px;
+}
+
+.star-four-five{
+  padding-right: 8px;
+	background: image-url('stars.png') no-repeat 0 -168px;
+	width: 132px;
+	height: 24px;
+}
+.star-five{
+  padding-right: 8px;
+	background: image-url('stars.png') no-repeat 0px -216px;
+	width: 132px;
+	height: 24px;
+}
+
+.map-info > :not(marquee){
+        padding: 4px 0;
+    }

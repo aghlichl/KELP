@@ -17,13 +17,13 @@ export default class BusinessIndex extends Component {
 
                 <div className="business-index-container">
                     {
-                        this.props.businesses.map(biz =>
+                        this.props.businesses.slice(0,3).map(biz =>
                             <div className="business-index-item" key={biz.id}>
                                 <div className='top-img-div'>
                                     <img className="top-img" src={biz.photo}></img> 
                                 </div>
-                                <div className="top-img-head">
-                                    <Link to={`businesses/${biz.id}`}> <h3 className="top-img-link">{biz.name}</h3> </Link>
+                                <div className="top-img-head-2">
+                                    <Link to={`businesses/${biz.id}`}> <h3 className="top-img-link-2">{biz.name}</h3> </Link>
                                 </div>
                             </div>
                         )

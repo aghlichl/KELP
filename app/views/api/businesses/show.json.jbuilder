@@ -1,6 +1,7 @@
 json.business do
   json.extract! @business, :id, :name, :category, :dollar_sign, :address, :latitude, :longitude, :phone, :website, :review_ids
-
+  json.average_stars @business.reviews.average(:rating)
+  json.num_reviews @business.reviews.count
   json.photoUrls @business.photos.map { |file| url_for(file) }
 end
 

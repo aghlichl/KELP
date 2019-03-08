@@ -5,5 +5,7 @@ export const selectBusiness = ({ businesses }, businessId) => {
 };
 
 export const selectReviewsForBusiness = ({ reviews }, business) => {
+    if(business.reviewIds){
     return business.reviewIds.map(reviewId => reviews[reviewId]);
+    }
 };
