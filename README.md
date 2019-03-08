@@ -5,7 +5,6 @@
 Kelp is a Yelp clone that allows users to browse businesses in their area. Users can read reviews for these businesses in order to make a more informed decision on who you want to do business with.
 
 
-[Splash Screen](/images/Screen Shot 2019-03-08 at 10.59.35 AM.png)
 
 
 ## Technologies
@@ -26,6 +25,5 @@ Kelp is a Yelp clone that allows users to browse businesses in their area. Users
 Users can search for a business by typing the business name in the search bar. using a case insensitive LIKE query, I'm able to output all the businesses that match the query.
 
 
-[Search Screen](/images/Screen Shot 2019-03-08 at 10.59.35 AM.png)
 
 ### 
