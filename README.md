@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Kelp Live](https://kelp-ari.herokuapp.com/#/)
 
-Things you may want to cover:
+Kelp is a Yelp clone that allows users to browse businesses in their area. Users can read reviews for these businesses in order to make a more informed decision on who you want to do business with.
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+## Technologies
+* Ruby on Rails 
+* React.js
+* Redux
+* HTML and CSS
+* PostgreSQL
+* Active Storage
 
-* Database initialization
+## Features 
+* User Authentication 
+* Allows users to search for businesses by name.
+* Displays Business information
+* Displays all Reviews associated to a Business
 
-* How to run the test suite
+### Search
+Users can search for a business by typing the business name in the search bar. using a case insensitive LIKE query, I'm able to output all the businesses that match the query.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+### 
