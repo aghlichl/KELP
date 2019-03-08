@@ -5,7 +5,7 @@
 Kelp is a Yelp clone that allows users to browse businesses in their area. Users can read reviews for these businesses in order to make a more informed decision on who you want to do business with.
 
 
-![Splash Screen](/images/splash_screen.png)
+<img src="https://github.com/aghlichl/KELP/blob/master/app/assets/images/splash_screen.png"/>
 
 ## Technologies
 * Ruby on Rails 
@@ -24,12 +24,12 @@ Kelp is a Yelp clone that allows users to browse businesses in their area. Users
 ### Search
 Users can search for a business by typing the business name in the search bar. using a case insensitive LIKE query, I'm able to output all the businesses that match the query.
 
-![Splash Screen](/images/splash_screen.png)
+<img src="https://github.com/aghlichl/KELP/blob/master/app/assets/images/search_screen.png"/>
 
 
 ### Business View with Reviews
 
 Users can view reviews and business information associated with the business itself
 
-![Splash Screen](/images/splash_screen.png)
+<img src="https://github.com/aghlichl/KELP/blob/master/app/assets/images/biz_screen.png"/>
 
