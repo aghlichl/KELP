@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ErrorPage = () => {
     return(
         <>
-        <div className="login-nav"> <Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img></Link> </div>
+        <div className="login-nav"> <Link to="/"><img src={window.images.logo}></img></Link> </div>
         <div className="error-container">
             <div className="error-text">
                 <h4><strong>404 error.</strong> Doggone it! The page <br></br> you’re looking for cannot be found.</h4> <br></br>

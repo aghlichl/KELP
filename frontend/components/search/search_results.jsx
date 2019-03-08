@@ -1,5 +1,6 @@
 import SearchNavContainer from '../search/search_nav_container'
 import React from 'react';
+import Footer from '../Footer/footer';
 import { Link } from 'react-router-dom';
 
 
@@ -123,6 +124,7 @@ export default class SearchResults extends React.Component {
                         )
                     }
                 </div>
+                <Footer />
     </div>
         )
     }

@@ -18,7 +18,6 @@ const Splash = () => {
 
     // window.backgroundImage = window.images[randomImage];
     return (
-        <>
           <div className='splash'>
           <div id="background">
             <div className="splash-content-container">
@@ -35,9 +34,9 @@ const Splash = () => {
             <div>
                 <BusinessIndex />
             </div>
+            <Footer />
         </div>
-        <Footer />
-        </>
+    
         )
 }
 

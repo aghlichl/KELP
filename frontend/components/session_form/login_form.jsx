@@ -42,8 +42,8 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <>
-                <div className="login-nav"> <Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img></Link> </div>
+            <div className="login-container">
+                <div className="login-nav"> <Link to="/"><img src={window.images.logo}></img></Link> </div>
                 <div className="login-main-content">
                     <div className="login-form">
                         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -81,7 +81,7 @@ class LoginForm extends React.Component {
                     </div>
                 </div>
                 <Footer />
-            </>
+            </div>
         );
     }
 }

@@ -14,6 +14,9 @@
  *= require_self
  */
 
+ #root {
+   min-height: 100vh;
+ }
  .error-container{
     width: 100%;
     min-height: 300px;
@@ -135,8 +138,16 @@
 
 body{
     margin: 0;
+    min-height: 100vh;
  }
 
+ .login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+ }
 
  .login-nav{
     display: flex;
@@ -155,25 +166,32 @@ body{
 
  }
 
+//  html {
+//   height: 100%;
+//   box-sizing: border-box;
+// }
+
  .login-main-content{
     max-width: 960px;
      display: flex;
      flex-direction: row;
      justify-content: space-around;
      align-items: center;
-     padding-top: 250px;
+     padding-top: 60px;
      margin: 0 500px;
      padding-bottom: 36px;
  }
 
 
  .footer-container{
+    grid-column-start: con_left;
+    grid-column-end: con_right;
      border-top: 1px solid #ccc;
      background: rgb(245, 245, 245) bottom;
      height: 150px;
-
      width: 100%;
      margin: 0 auto;
+     position: relative; 
  }
 
  .footer-image{
@@ -452,10 +470,12 @@ select {
 }
 
 .top-img{
-  max-height: 180px;
+    max-height: 180px;
+    min-height: 180px;
     object-fit: cover;
     border-radius: 4px 4px 0 0;
     min-width: 298px;
+    max-width: 298px;
 }
 
 

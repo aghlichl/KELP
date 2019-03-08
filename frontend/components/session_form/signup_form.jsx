@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/footer'
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -41,8 +42,8 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <>
-                <div className="login-nav"> <Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"></img></Link> </div>
+            <div className="login-container">
+                <div className="login-nav"> <Link to="/"><img src={window.images.logo}></img></Link> </div>
                 <div className="login-main-content">
                     <div className="login-form">
                         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -77,7 +78,9 @@ class SignupForm extends React.Component {
                         <img src="https://s3-media4.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"></img>
                     </div>
                 </div>
-            </>
+                <Footer />
+                
+            </div>
         );
     }
 }
