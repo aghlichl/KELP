@@ -33,3 +33,4 @@ Users can view reviews and business information associated with the business its
 
 <img src="https://github.com/aghlichl/KELP/blob/master/app/assets/images/biz_screen.png"/>
 
+<a href="https://codeclimate.com/github/aghlichl/KELP/maintainability"><img src="https://api.codeclimate.com/v1/badges/a6c07d674754929b0bbb/maintainability" /></a>
