@@ -1401,7 +1401,7 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "near-input-nav",
         type: "text",
-        placeholder: "Near",
+        placeholder: "Near: San Francisco",
         name: "Location"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "search-button-nav"
@@ -2084,11 +2084,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (window.currentUser) {
     var preloadedState = {
-      entities: {
-        users: _defineProperty({}, window.currentUser.id, window.currentUser)
-      },
       session: {
         id: window.currentUser.id
+      },
+      entities: {
+        users: _defineProperty({}, window.currentUser.id, window.currentUser)
       }
     };
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])(preloadedState);

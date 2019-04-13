@@ -36,7 +36,7 @@ export default class SearchNav extends React.Component {
                         placeholder="Find"
                         name="Find"
                         onChange={this.update('name')} />
-                    <input id="near-input-nav" type="text" placeholder="Near" name="Location" />
+                    <input id="near-input-nav" type="text" placeholder="Near: San Francisco" name="Location" />
                     <button className="search-button-nav">
                         <i className="fas fa-search"></i>
                     </button>
