@@ -1225,3 +1225,7 @@ a:-webkit-any-link{
 .map-info > :not(marquee){
         padding: 4px 0;
     }
+
+  textarea:focus, input:focus{
+    outline: none;
+}
