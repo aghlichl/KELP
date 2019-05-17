@@ -1,5 +1,3 @@
-
-    
 import * as ReviewApiUtil from '../util/review_api_util'; 
 
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
@@ -24,3 +22,16 @@ export const deleteReview = id => dispatch => (
     ReviewApiUtil.deleteReview(id)
         .then(payload => dispatch(removeReview(payload)))
 );
+
+
+export const editReview = review => dispatch => (
+    ReviewApiUtil.updateReview(review)
+        .then(review => dispatch(receiveReview(review)))
+);
+
+
+export const editReview = (reviewId, review) => dispatch => (
+    APIUtil.updateReview(reviewId, review).then(review => (
+      dispatch(receiveReview(review)))
+    )
+  );
