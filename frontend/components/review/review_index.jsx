@@ -54,8 +54,8 @@ class ReviewIndex extends React.Component{
         
 
         const reviews = Object.values(this.props.reviews).map(review => {
-            return(
-                <li>
+            return (
+                <li key={review.id}>
                     <div className="single_review">
                         <div className="rssr_rating">
                             <div className={formatRatings(review.rating)}>

@@ -98,11 +98,11 @@ class BusinessView extends React.Component {
                         </div>
                     </div>
                     <div className="review">
-                        <button>
+                            <Link to={`/businesses/${business.id}/review`}>
                             <i className="fas fa-star"></i>
                             &nbsp;
                             Write a Review
-                        </button>
+                        </Link>
                     </div>
                     <div className="map">
                         <div id="actual-map">

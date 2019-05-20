@@ -1,6 +1,7 @@
 import React from 'react';
 import Splash from './Splash/splash'
 import BusinessViewContainer from './business/business_view_container';
+import BusinessReviewContainer from './business_review/business_review_container';
 import BusinessIndexViewContainer from './business_index/business_index_view_container';
 import SearchResultsContainer from './search/search_results_container'
 import ErrorPage from './error/error_page';
@@ -17,6 +18,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <Route exact path="/businesses" component={BusinessIndexViewContainer} />
             <Route exact path="/businesses/:businessId" component={BusinessViewContainer} />
+            <Route exact path="/businesses/:businessId/review" component={BusinessReviewContainer} />
             <Route exact path="/search" component={SearchResultsContainer} />
             <Route exact path="/" component={Splash}/>
             <Route component={ErrorPage}/>

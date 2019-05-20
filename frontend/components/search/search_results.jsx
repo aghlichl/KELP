@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default class SearchResults extends React.Component {
     componentDidMount() {
-        this.props.fetchAll();
+        // this.props.fetchAll();
     }
 
 

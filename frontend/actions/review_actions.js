@@ -23,15 +23,7 @@ export const deleteReview = id => dispatch => (
         .then(payload => dispatch(removeReview(payload)))
 );
 
-
-export const editReview = review => dispatch => (
-    ReviewApiUtil.updateReview(review)
+export const editReview = (reviewId, review) => dispatch => (
+    ReviewApiUtil.updateReview(reviewId, review)
         .then(review => dispatch(receiveReview(review)))
 );
-
-
-export const editReview = (reviewId, review) => dispatch => (
-    APIUtil.updateReview(reviewId, review).then(review => (
-      dispatch(receiveReview(review)))
-    )
-  );
