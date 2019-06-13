@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export default class BusinessIndex extends Component {
     componentDidMount() {
-        console.log(this.props)
         this.props.fetchAll();
     }
 
@@ -18,8 +17,8 @@ export default class BusinessIndex extends Component {
                 <div className="business-index-container">
                     {
                         this.props.businesses.slice(0,3).map(biz =>
-                            <Link to={`businesses/${biz.id}`}>
-                                <div className="business-index-item" key={biz.id}>
+                            <Link key={biz.id} to={`businesses/${biz.id}`}>
+                                <div className="business-index-item">
                                     <div className='top-img-div'>
                                         <img className="top-img" src={biz.photo}></img> 
                                     </div>

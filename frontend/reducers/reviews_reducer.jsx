@@ -14,14 +14,11 @@ const reviewsReducer = (oldState = {}, action) => {
             delete newState[action.review.id];
             return newState;
         case RECEIVE_REVIEW:
-            // console.log("old state", oldState)    
-            // console.log("new piece", action.payload)  
             
             newState = merge({}, oldState);
             delete newState[action.review.id];
             //return merge({}, state, {[action.payload.review.id]: action.payload.review});
 
-            // console.log("merged new state", newState) 
             
             return newState;
         default:
