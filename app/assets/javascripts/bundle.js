@@ -818,7 +818,9 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find the Best Businesses in Town")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "business-index-container"
       }, this.props.businesses.slice(0, 3).map(function (biz) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "businesses/".concat(biz.id)
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "business-index-item",
           key: biz.id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -828,11 +830,9 @@ function (_Component) {
           src: biz.photo
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "top-img-head-2"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "businesses/".concat(biz.id)
-        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "top-img-link-2"
-        }, biz.name), " ")));
+        }, biz.name))));
       }))));
     }
   }]);
@@ -1066,9 +1066,9 @@ var Greeting = function Greeting(_ref) {
   };
 
   var personalGreeting = function personalGreeting() {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "Hi, ", currentUser.email, "!"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-      onClick: logout
-    }, "Log Out"));
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+      src: "https://s3-media0.fl.yelpcdn.com/assets/public/user_medium_square.yelp_styleguide.yji-bf5ff8a79310030f79328ae60713730f.png"
+    }));
   };
 
   return currentUser ? personalGreeting() : sessionLinks();

@@ -17,6 +17,7 @@
  #root {
    min-height: 100vh;
  }
+
  .error-container{
     min-height: 300px;
     padding: 40px 245px;
@@ -640,7 +641,7 @@ select {
 }
 
 
-.business-view img {
+.business-view .images img {
   width: 220px;
   height: 220px;
   object-fit: cover;
@@ -649,7 +650,7 @@ select {
   
 }
 
-.business-view img:nth-child(2) {
+.business-view .images img:nth-child(2) {
   width: 250px;
   height: 250px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -657,12 +658,12 @@ select {
 }
 
 
-.business-view img:nth-child(odd):hover~img:nth-child(2) {
+.business-view .images img:nth-child(odd):hover~img:nth-child(2) {
   width: 220px;
   height: 220px;
 }
 
-.business-view img:hover {
+.business-view .images img:hover {
   width: 250px;
   height: 250px;
   transform: scale(1.1);
