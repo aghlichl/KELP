@@ -10,8 +10,18 @@ const reviewsReducer = (oldState = {}, action) => {
         case RECEIVE_BUSINESS:
             return merge({}, oldState, action.payload.reviews);
         case REMOVE_REVIEW:
+            /*
+                {"id":151,
+                "body":"dsjkfasfjl",
+                "rating":2,
+                "user_id":1,
+                "business_id":58,
+                "created_at":"2019-06-15T02:06:18.587Z",
+                "updated_at":"2019-06-15T02:06:18.587Z"}
+            */
+            console.log("in the reducer", action);
             newState = merge({}, oldState);
-            delete newState[action.review.id];
+            delete newState[action.payload.id];
             return newState;
         case RECEIVE_REVIEW:
             

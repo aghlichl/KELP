@@ -8,9 +8,9 @@ export const receiveReview = ( review ) => ({
     review
 });
 
-export const removeReview = business => ({
+export const removeReview = payload => ({
     type: REMOVE_REVIEW,
-    review: business.review
+    payload
 });
 
 export const createReview = review => dispatch => (

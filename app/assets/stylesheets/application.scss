@@ -18,6 +18,113 @@
    min-height: 100vh;
  }
 
+ .multi-map{
+   min-width: 298px;
+   min-height: 300px;
+   width: 298px;
+   width: 300px;
+ }
+
+ #white-out{
+   background-color: white;
+   margin-top: -68px;
+ }
+
+ #multi-map{
+   position: absolute;
+   top: 68px;
+   right: 10vw;
+ }
+
+ .dynamic-rating-total{
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   margin-bottom: 18px;
+ }
+
+ .rating-description{
+   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+   color: #333;
+   font-size: 14px;
+   line-height: 1.28571em;
+   margin-left: 10px;
+   margin-top: 7px;
+ }
+
+
+ .login-signup-flex{
+   display: flex;
+ }
+
+ #write-review-button-txt{
+   color: #fff;
+    background: #d32323;
+    border: 1px solid #d32323;
+    transition: all 0.5s ease-in-out;
+    font-size: 14px;
+    line-height: 1.28571em;
+    padding: 8px 19px 9px;
+    border-radius: 3px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: 100%;
+    text-decoration: none;
+ }
+
+ #multi-map-container{
+   max-height: 300px;
+   max-width: 300px;
+   grid-area: map;
+ }
+
+
+
+ #map-container{
+   height: 135px;
+   width: 286px;
+ }
+ 
+ .time-stamp{
+   display: block;
+    float: left;
+    color: #666;
+    font-weight: normal;
+    margin-top: 3px;
+ }
+
+ .review-form-body{
+   font-size: 18px;
+    line-height: 1.33333em;
+    line-height: 1.44em;
+    border: 0;
+    outline: none;
+    padding: 0;
+    resize: none;
+    width: 100%;
+    min-height: 258px;
+ }
+
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    font-weight: 400;
+}
+
+ .review-total{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: text;
+    padding: 18px;
+    max-width: 630px;
+ }
+
+ .review-nav-text{
+    color: #fff;
+    font-size: 20px;
+ }
+
  .error-container{
     min-height: 300px;
     padding: 40px 245px;
@@ -157,6 +264,11 @@ body{
     background: #d32323;
     max-height: 29px;
     padding: 12px;
+ }
+
+ .avatar-img{
+   max-height: 40px;
+   max-width: 40px;
  }
 
  .login-nav img{
@@ -389,8 +501,35 @@ select {
     background-size,
     border-color;
 }
+#sign_up_button {
+    margin: 5px;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 8px;
+    padding-right: 0;
+    color: #fff;
+    display: block;
+    padding: 9px 19px 10px;
+    font-size: 12px;
+    line-height: 1.28571em;
+    font-weight: 700;
+    background: none;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 4px;
+    transition: 4.0s;
+    transition-property: background-color,
+    background-position,
+    background-size,
+    border-color;
+    min-width: 50px;
+}
 
 #demo_button:hover {
+    background-color: white;
+    color: #666;
+}
+
+#sign_up_button:hover {
     background-color: white;
     color: #666;
 }
@@ -432,7 +571,6 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
 }
 
 .business-index-header{
@@ -480,7 +618,6 @@ select {
 }
 
 
-
 .business-view-view .header {
   display: grid;
   grid-template-areas:
@@ -490,6 +627,16 @@ select {
   grid-template-rows: 68px;
 
 }
+
+.review-grid{
+   display: grid;
+  grid-template-areas:
+  "review-form-left review-form-center review-form-right";
+  grid-template-columns: 1fr 960px 1fr;
+  grid-template-rows: 1000px;
+}
+
+
 .business-view-view .header .nav_left {
   grid-area: nav_left;
 }
@@ -502,6 +649,19 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+}
+
+.review-grid .review-form-left{
+  grid-area:review-form-left;
+
+} 
+.review-grid .review-form-center{
+  grid-area:review-form-center;
+
+}
+.review-grid .review-form-right{
+  grid-area:review-form-right;
 
 }
 
@@ -564,6 +724,42 @@ select {
   width: 555px;
   height: 112px;
   padding: 10px;
+}
+
+.review-business-name{
+    font-size: 36px;
+    line-height: 1.16667em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
+    display: block;
+}
+
+#review-business-link{
+  color: #0073bb;
+  text-decoration: none;
+}
+
+#review-business-link:hover{
+  text-decoration: underline;
+}
+
+.review-post{
+  margin-top: 24px!important;
+  min-width: 240px;
+    height: 48px;
+    color: #fff;
+    background: #d32323;
+    border: 1px solid #d32323;
+    vertical-align: middle;
+    margin: 0;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 13px;
+    font-size: 16px;
+    line-height: 1.3125em;
+    border-radius: 3px;
 }
 
 .business-view .map {
@@ -907,7 +1103,7 @@ a:-webkit-any-link{
    padding-bottom: 18px;
    display: flex;
    flex-direction: row;
-   border-bottom: solid whitesmoke;
+   border-bottom: 1px solid #ccc;
  }
 
 //  .single-result-top-info{
@@ -1033,13 +1229,14 @@ a:-webkit-any-link{
 
 }
 
+
 .search_results .nav_left {
   grid-area: nav_left;
 }
 .search_results .nav_center {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   grid-area: nav_center;
   padding: 12px 0;
 }
@@ -1064,8 +1261,16 @@ a:-webkit-any-link{
 
 .search_results .con_center {
   grid-area: con_center;
+  display: grid;
+  grid-template-areas: "results map";
+  grid-template-columns: 660px 300px;
   background: white;
 }
+
+.search_results .con_center .results{
+  grid-area: results;
+}
+
 
 .search_results .con_left {
   grid-area: con_left;
@@ -1132,8 +1337,27 @@ a:-webkit-any-link{
   width: 60px;
 }
 
+.rating-and-time{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start
+}
+
 .rssr_rating {
   grid-area: rssr_rating;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.trash-button{
+  background: rgb(201, 201, 201);
+  border-radius: 5px;
+  transition: all 0.6s;
+}
+
+.trash-button:hover{
+  background: rgb(172, 172, 172);
 }
 
 .rssr_review {
@@ -1158,6 +1382,47 @@ a:-webkit-any-link{
 
 .review-index{
   width: 100%;
+}
+
+.dynamic-ratings{
+  display: flex;
+}
+
+.star-zero-dynamic{
+  margin-right: 2.4px;
+	background: image-url('form-stars.png') no-repeat 0 0;
+	width: 30px;
+	height: 30px;
+}
+.star-one-dynamic{
+  margin-right: 2.4px;
+	background: image-url('form-stars.png') no-repeat 0 -30px;
+	width: 30px;
+	height: 30px;
+}
+.star-two-dynamic{
+  margin-right: 2.4px;
+	background: image-url('form-stars.png') no-repeat 0 -60px;
+	width: 30px;
+	height: 30px;
+}
+.star-three-dynamic{
+  margin-right: 2.4px;
+	background: image-url('form-stars.png') no-repeat 0 -90px;
+	width: 30px;
+	height: 30px;
+}
+.star-four-dynamic{
+  margin-right: 2.4px;
+	background: image-url('form-stars.png') no-repeat 0 -120px;
+	width: 30px;
+	height: 30px;
+}
+.star-five-dynamic{
+  margin-right: 2.4px;
+	background: image-url('form-stars.png') no-repeat 0 -150px;
+	width: 30px;
+	height: 30px;
 }
 
 .star-one{

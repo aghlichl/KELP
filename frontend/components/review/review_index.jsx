@@ -1,14 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class ReviewIndex extends React.Component{
-    constructor(props){
+class ReviewIndex extends React.Component {
+    constructor(props) {
         super(props);
-        
+
     }
 
+    formattedDate(inputDate){
+      let result="";
+      let d = new Date(inputDate);
+        result += (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
+      return result;
+    }
 
-    render(){
+    byDate(a, b) {
+        // console.log("a", a);
+        a = new Date(a.createdAt);
+        b = new Date(b.createdAt);
+        return a > b ? -1 : a < b ? 1 : 0;
+    };
+
+    render() {
         if (!this.props.reviews) return null
 
         function formatRatings(avgRating) {
@@ -50,16 +63,27 @@ class ReviewIndex extends React.Component{
             else {
                 return "star-five";
             }
-        }   
+        }
+
         
 
-        const reviews = Object.values(this.props.reviews).map(review => {
+        
+
+        let reviews = Object.values(this.props.reviews).sort((a,b) => this.byDate(a,b)).map(review => {
             return (
                 <li key={review.id}>
                     <div className="single_review">
                         <div className="rssr_rating">
-                            <div className={formatRatings(review.rating)}>
-                            </div> 
+                            <div className='rating-and-time'>
+                                <div className={formatRatings(review.rating)}>
+                                </div>
+                                <div className='time-stamp'>
+                                    {this.formattedDate(review.createdAt)}
+                                </div>
+                            </div>
+                            <div className="trash-div">
+                                {this.props.currentUserId == review.userId ? <button onClick={() => this.props.deleteReview(review.id)} className="trash-button"><i className="far fa-trash-alt"></i></button> : ''}
+                            </div>
                         </div>
                         <div className="rssr_user">
                             <img src={window.images.profile_60}></img>
@@ -73,7 +97,9 @@ class ReviewIndex extends React.Component{
                 </li>
             )
         })
-        return(
+
+
+        return (
             <div className="reviews">
                 {reviews}
             </div>

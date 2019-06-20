@@ -1,6 +1,6 @@
 @businesses.each do |business|
   json.set! business.id do
-    json.extract! business, :id, :name, :category, :dollar_sign, :address, :phone
+    json.extract! business, :id, :name, :category, :dollar_sign, :address, :latitude, :longitude, :phone
     json.photo url_for(business.photos.first)
 
     json.review do

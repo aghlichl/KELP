@@ -1,15 +1,14 @@
-import {connect} from 'react-redux';
+
+import { connect } from 'react-redux';
 import {createReview, editReview} from '../../actions/review_actions';
 import {fetchBusiness} from '../../actions/business_actions';
 import BusinessReview from './business_review';
-// import {selectUserReview} from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  const business = state.entities.businesses[ownProps.match.params.id];
+  const business = state.entities.businesses[ownProps.match.params.businessId];
   const reviews = state.entities.reviews;
   const users = state.entities.users;
   const userId = state.session.id;
-//   const loggedInUserReview = selectUserReview(userId, business, reviews);
   return ({business});
 };
 
@@ -19,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
   editReview: (reviewId, review) => dispatch(editReview(reviewId, review)),
 });
 
-export default connect(null, null)(BusinessReview);
+export default connect(mapStateToProps, mapDispatchToProps)(BusinessReview);

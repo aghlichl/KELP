@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     const businessId = parseInt(ownProps.match.params.businessId);
     const business = selectBusiness(state.entities, businessId);
     const reviews = selectReviewsForBusiness(state.entities, business);
-    return { business, reviews };
+    return { business };
 };
 
 const mapDispatchToProps = dispatch => ({

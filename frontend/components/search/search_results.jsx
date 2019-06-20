@@ -1,7 +1,9 @@
-import SearchNavContainer from '../search/search_nav_container'
+import SearchNavContainer from '../search/search_nav_container';
+import BusinessMapContainer from '../map/map_container';
 import React from 'react';
 import Footer from '../Footer/footer';
 import { Link } from 'react-router-dom';
+import GreetingContainer from '../greeting/greeting_container';
 
 
 export default class SearchResults extends React.Component {
@@ -61,23 +63,23 @@ export default class SearchResults extends React.Component {
             
         
         
-        return (
+            return (
+            <>
+                 
             <div className="search_results">
                 <div className="nav_center">
                     <Link to="/"><img src={window.images.logo}></img></Link>
                     <SearchNavContainer />
-                    <button className="search-login"><Link to="/login"> Login</Link></button>
-                    <button className="search-signup">  <Link to="/signup">Sign Up</Link></button>
-
+                    <GreetingContainer />
                 </div>
                 <div className="nav_left"></div>
                 <div className="nav_right"> </div>
                 <div className="con_left"></div>
-                <div className="con_right">
-                    <img src={window.images.map_index}></img>
-                </div>
-
+                <div className="con_right"></div>
+                        
                 <div className="con_center">
+                            <BusinessMapContainer />
+                            <div className="results">
                     {
                         this.props.businesses.map(biz =>
                             <div className="single-result" key={biz.id}>
@@ -119,13 +121,14 @@ export default class SearchResults extends React.Component {
                                         </div>
                                     </div>
 
-                                {/* </div> */}
-                            </div>
+                                </div>
                         )
                     }
+                    </div>
                 </div>
-                <Footer />
-    </div>
+        </div>      
+    <Footer />
+    </>
         )
     }
 }
